@@ -1,0 +1,114 @@
+ 
+
+#iterative Binary Search 
+# x dizide var ise hangi dizinde olduğunu gösterir
+
+def binarySearch(dizi, sol, sag, x): 
+  
+    while sol <= sag: 
+  
+        ortanca = sol + (sag - sol) // 2; 
+          
+       # X degeri ortada mi diye kontrol et  
+        if dizi[ortanca] == x: 
+            return ortanca 
+  
+        # Eger x ortadakinden buyuk ise sol tarafi yoksay  
+        elif dizi[ortanca] < x: 
+            sol = ortanca + 1
+  
+         # Eger x ortadakinden kucuk ise sag tarafi yoksay 
+        else: 
+            sag = ortanca - 1
+      
+         # Eger bu asamaya gelindiyse ve sayi dizide yoksa
+    return -1
+  
+# Diziyi test et  
+dizi = [ 4, 7, 10, 18, 19 ,44,61] 
+x =61 
+  
+# Fonksiyonu cagir 
+sonuc = binarySearch(dizi, 0, len(dizi)-1, x) 
+  
+if sonuc != -1: 
+    print (" % d. dizininde oge mevcut " % sonuc) 
+else: 
+    print ("dizide oge mevcut degil") 
+    
+    
+    
+    #recursive Binary Search
+    
+    #Varsa dizide x dizinini döndürür,yoksa -1 döndürür
+def binarySearch (dizi, sol, sag, x): 
+  
+    # Kontrol edilir 
+    if sag >= sol: 
+  
+        ortanca = sol + (sag - sol) // 2
+  
+        #Eger deger ortada ise
+        if dizi[ortanca] == x: 
+            return ortanca 
+          
+       #Sayi ortadakinden daha kucukse, o zaman sadece sol dizide mevcut olabilir 
+        elif dizi[ortanca] > x: 
+            return binarySearch(dizi, sol, ortanca-1, x) 
+  
+       # Degilse sayı sadece sag dizide olabilir 
+         
+        else: 
+            return binarySearch(dizi, ortanca + 1, sag, x) 
+  
+    else: 
+        # Sayi dizide mevcut degil 
+        return -1
+  
+#Diziyi test et
+dizi = [ 4, 7, 10, 18, 19 ,44,61] 
+x =61 
+  
+# Fonksiyonu cagir 
+sonuc = binarySearch(dizi, 0, len(dizi)-1, x) 
+  
+if sonuc != -1: 
+    print (" % d. dizininde oge mevcut " % sonuc) 
+else: 
+    print ("dizide oge mevcut degil") 
+    
+    
+    
+    
+   
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
