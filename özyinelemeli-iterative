@@ -38,9 +38,9 @@ else:
     
     
     
-    #recursive Binary Search
+    #Recursive Binary Search
     
-    #Varsa dizide x dizinini döndürür,yoksa -1 döndürür
+    
 def binarySearch (dizi, sol, sag, x): 
   
     # Kontrol edilir 
